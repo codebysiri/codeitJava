@@ -13,7 +13,21 @@ public class BankDriver {
         p1.account = a1;
         a1.owner = p1;
 
-        // 3-4. write code here
+        Person p2 = new Person();
+        p2.name = "김성실";
+        p2.age = 29;
+        p2.cashAmount = 100000;
+
+        BankAccount a2 = new BankAccount();
+        a2.balance = 500000;
+
+        p2.account = a2;
+        a2.owner = p2;
+
+        System.out.println(a2.deposit(30000));
+        System.out.println(a2.withdraw(170000));
+        System.out.println(a2.deposit(300000));
+        System.out.println(a2.withdraw(450000));
 
 
     }
