@@ -1,11 +1,11 @@
-// 접근 제어자 연습
+package Access.modifier;// 접근 제어자 연습
 
-public class Person01 {
+public class Person {
 
     private String name;
     private int age;
     private int cashAmount;
-    private BankAccount01 account;
+    private BankAccount account;
 
 
     public void setName(String newName) {
@@ -36,11 +36,11 @@ public class Person01 {
         return cashAmount;
     }
 
-    public void setAccount(BankAccount01 newAccount) {
-            account = newAccount;
+    public void setAccount(BankAccount newAccount) {
+        account = newAccount;
     }
 
-    public BankAccount01 getAccount() {
+    public BankAccount getAccount() {
         return account;
     }
 

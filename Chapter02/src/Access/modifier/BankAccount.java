@@ -1,9 +1,8 @@
-// 접근 제어자 연습
+package Access.modifier;// 접근 제어자 연습
 
-public class BankAccount01 {
+public class BankAccount {
     private int balance;
-    private Person01 owner;
-
+    private Person owner;
 
     public void setBalance(int newBalance) {
         if (newBalance >= 0) {
@@ -15,11 +14,11 @@ public class BankAccount01 {
         return balance;
     }
 
-    public void setOwner(Person01 newOwner) {
+    public void setOwner(Person newOwner) {
         owner = newOwner;
     }
 
-    public Person01 getOwner() {
+    public Person getOwner() {
         return owner;
     }
 
