@@ -22,46 +22,50 @@ public class BankAccount {
         return owner;
     }
 
-    boolean deposit (int amount) {
-        if((amount >= 0) && (owner.getCashAmount() > amount)) {
-            owner.setCashAmount(owner.getCashAmount() - amount);
-            balance = balance + amount;
-            System.out.println(amount + "원 입금하였습니다. 잔고: " + balance + "원, 현금: " + owner.getCashAmount() + "원");
-            return true;
-        } else {
+    boolean deposit(int amount) {
+        if (amount < 0 || owner.getCashAmount() < amount) {
             System.out.println("입금 실패입니다. 잔고: " + balance + "원, 현금: " + owner.getCashAmount() + "원");
             return false;
         }
+        balance += amount;
+        owner.setCashAmount(owner.getCashAmount() - amount);
+        System.out.println(amount + "원 입금하였습니다. 잔고: " + balance + "원, 현금: " + owner.getCashAmount() + "원");
+        return true;
     }
 
-    boolean withdraw (int amount) {
-        if((amount >= 0 && balance > amount)) {
-            balance = balance - amount;
-            owner.setCashAmount(owner.getCashAmount() + amount);
-            System.out.println(amount + "원 출금하였습니다. 잔고: " + balance + "원, 현금: " + owner.getCashAmount() + "원");
-            return true;
-        } else {
-            System.out.println("출금실패입니다. 잔고: " + balance + "원, 현금: " + owner.getCashAmount() + "원");
+    // 파라미터 : 출금할 액수(정수)
+    // 리턴 : 성공여부(불린)
+    boolean withdraw(int amount) {
+        if (amount < 0 || balance < amount) {
+            System.out.println("출금 실패입니다. 잔고: " + balance + "원, 현금: " + owner.getCashAmount() + "원");
             return false;
         }
+        balance -= amount;
+        owner.setCashAmount(owner.getCashAmount() + amount);
+        System.out.println(amount + "원 출금하였습니다. 잔고: " + balance + "원, 현금: " + owner.getCashAmount() + "원");
+        return true;
     }
 
+    // 첫 번째 파라미터: 받는 사람 (Person)
+    // 두 번째 파라미터: 이체할 금액 (정수)
+    // 리턴 : 성공여부 (불린)
+    public boolean transfer(Person to, int amount) {
+        return transfer(to.getAccount(), amount);
+    }
+
+    // 첫 번째 파라미터: 받는 사람의 계정 (BankAccount)
+    // 두 번째 파라미터: 이체할 금액 (정수)
+    // 리턴 : 성공여부 (불린)
     public boolean transfer(BankAccount to, int amount) {
         boolean success;
-        if (amount < 0 || amount > balance) {
+        if (amount < 0 || balance < amount) {
             success = false;
         } else {
-            balance = balance - amount;
-            to.balance = to.balance + amount;
+            balance -= amount;
+            to.balance += amount;
             success = true;
         }
         System.out.println(success + " - from: " + owner.getName() + ", to: " + to.owner.getName() + ", amount: " + amount + ", balance: " + balance);
         return success;
     }
-
-    public boolean transfer(Person to, int amount) {
-        return transfer(to.getAccount(), amount);
-    }
-
-
 }
