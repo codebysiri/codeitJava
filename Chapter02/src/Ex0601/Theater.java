@@ -6,6 +6,11 @@ public class Theater {
     private int rowCount, colCount;
 
     public Theater(int rowCount, int colCount) {
+
+        if(rowCount > 26) {
+            rowCount = 26;
+        }
+
         seats = new Seat[rowCount][colCount];
 
         for (int i = 0; i < rowCount; i++) {
