@@ -1,8 +1,7 @@
-public class Switch {
+public class Ex0406 {
     public static void main(String[] args) {
         int number = 134354;
-
-        switch (number%7){
+        switch (number % 7) {
             case 0:
                 System.out.println("Zero");
                 break;
