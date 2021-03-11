@@ -1,4 +1,4 @@
-public class Dna {
+public class Ex0504 {
     public static void main(String[] args) {
         String dna = "GATCCGCCCGCCTCGGCCTCCCAAAGTGCTGGGATTACAGGTGTGAGCCA"
                 + "CCACGCCCGGCTAATTTTTATTTATTTATTTAAAGACAGAGTCTCACTCT"
@@ -23,6 +23,7 @@ public class Dna {
                 + "GGCCGGGCACAGTGGCTCACACCTGTAATCCCAGCACTTTGGGAGGTGGA"
                 + "GGTGGGTAGATCACCTGACGTCAGGAGTTGGAAACCAGCCTGGCTAACAT";
         char[] charArray = dna.toCharArray();
+
         int TAGG = 0;
         int CCAG = 0;
         int AGCC = 0;
@@ -39,16 +40,19 @@ public class Dna {
                 case "TAGG":
                     TAGG++;
                     break;
+
                 case "CCAG":
                     CCAG++;
                     break;
+
                 case "AGCC":
                     AGCC++;
                     break;
             }
         }
+
         System.out.println("TAGG: " + TAGG);
-        System.out.println("CCAG: " + CCAG);
+        System.out.println("CAGG: " + CCAG);
         System.out.println("AGCC: " + AGCC);
     }
 }
