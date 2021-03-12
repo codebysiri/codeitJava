@@ -1,16 +1,15 @@
-package Access.modifier;// 접근 제어자 연습
+package Ex0203;
 
-public class BankDriver {
+public class Main {
     public static void main(String[] args) {
-        // 사람 선언
+
         Person p1 = new Person();
         p1.setName("김신의");
         p1.setAge(28);
         p1.setCashAmount(30000);
 
-        // 은행 계좌 생성
         BankAccount a1 = new BankAccount();
-        a1.setBalance(10000);
+        a1.setBalance(100000);
 
         p1.setAccount(a1);
         a1.setOwner(p1);
@@ -28,9 +27,7 @@ public class BankDriver {
 
         System.out.println(a2.deposit(30000));
         System.out.println(a2.withdraw(170000));
-        System.out.println(a2.deposit(300000));
-        System.out.println(a2.withdraw(450000));
-
-
+        System.out.println(a2.deposit(500000));
+        System.out.println(a2.withdraw(970000));
     }
 }
