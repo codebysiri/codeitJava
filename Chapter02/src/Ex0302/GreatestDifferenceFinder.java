@@ -1,16 +1,14 @@
-package Midterm.two;
+package Ex0302;
 
 public class GreatestDifferenceFinder {
     int greatestDifference(int[] intArray) {
-
         if (intArray.length < 2) {
             return 0;
         }
-
         int max = intArray[0];
         int min = intArray[0];
 
-        for(int i = 0; i < intArray.length; i++) {
+        for (int i = 0; i < intArray.length; i++) {
             if (max < intArray[i]) {
                 max = intArray[i];
             }
@@ -18,6 +16,6 @@ public class GreatestDifferenceFinder {
                 min = intArray[i];
             }
         }
-        return max-min;
+        return max - min;
     }
 }
