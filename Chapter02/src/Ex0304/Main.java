@@ -1,14 +1,14 @@
-package Midterm.Three;
+package Ex0304;
 
 public class Main {
     public static void main(String[] args) {
         ShapePrinter printer = new ShapePrinter();
 
         // 테스트
-        printer.printTriangle(3);
+        printer.printPyramid(3);
         System.out.println("----------");
-        printer.printTriangle(5);
+        printer.printPyramid(5);
         System.out.println("----------");
-        printer.printTriangle(10);
+        printer.printPyramid(10);
     }
 }
