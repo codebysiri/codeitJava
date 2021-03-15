@@ -1,9 +1,11 @@
-package Midterm.one;
+package Ex0301;
 
 public class AverageFinder {
-    double computeAverage(int[] intArray){
+    double computeAverage(int[] intArray) {
+
         int sum = 0;
-        for(int i = 0; i < intArray.length; i++) {
+
+        for (int i = 0; i < intArray.length; i ++) {
             sum += intArray[i];
         }
         return (double) sum / intArray.length;

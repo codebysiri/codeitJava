@@ -1,6 +1,4 @@
-package Midterm.one;
-
-import Midterm.one.AverageFinder;
+package Ex0301;
 
 public class Main {
     public static void main(String[] args) {
